@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, TextInput, View} from 'react-native';
-import useStorage from '../storage.hook';
+import useStorage from '../Hooks/storage';
 
 const Home: React.FC = () => {
   const [nome, setNome] = useStorage('name');

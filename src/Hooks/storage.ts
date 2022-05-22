@@ -1,6 +1,10 @@
-import {MMKVLoader, useMMKVStorage} from 'react-native-mmkv-storage';
+import {
+  MMKVInstance,
+  MMKVLoader,
+  useMMKVStorage,
+} from 'react-native-mmkv-storage';
 
-const MMKV: MMKVStorage.API = new MMKVLoader().initialize();
+const MMKV: MMKVInstance = new MMKVLoader().initialize();
 type LiteralUnion<T extends U, U = string> = T | (U & {});
 
 function useStorage(
