@@ -3,12 +3,15 @@
 ## Target
 Creare un template per una applicazione sia mobile che web
 
+- clicca sul tasto `usa questo template`
+- dai un nome alla tua repo
+- clona la tua nuova repo
+
+
 ```sh
-git clone git@github.com:AndreaMolinari/ReactNative-IOS-15-ProductionTemplate.git MyNewApp
+cd <NewRepo>
 
-cd MyNewApp
-
-npx react-native-rename MyNewApp
+npx react-native-rename <NewRepo>
 ```
 
 ## Capabilities
