@@ -1,8 +1,9 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {Button, Text} from 'react-native';
+import {Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Home from './Home';
 import Page from './Page';
 
 const Main: React.FC = () => {
@@ -19,10 +20,11 @@ const Main: React.FC = () => {
               style={{
                 padding: 10,
               }}>
-              <Text>Menu</Text>
+              <Text>🍔</Text>
             </TouchableOpacity>
           ),
         })}>
+        <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Page" component={Page} />
       </Drawer.Navigator>
     </NavigationContainer>

@@ -40,6 +40,7 @@ const svgLoaderConfiguration = {
       loader: '@svgr/webpack',
       options: {
         native: true,
+        babel: false,
       },
     },
   ],

@@ -7,7 +7,8 @@ Creare un template per una applicazione sia mobile che web
 
 - [x] WebPack
 - [x] Navigation
-- [ ] Storage
+- [x] Storage
+- [ ] FontAwersome - @fortawesome/react-native-fontawesome
 - [ ] Tests
 
 

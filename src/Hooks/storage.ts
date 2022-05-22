@@ -1,18 +1,35 @@
-import {
-  MMKVInstance,
-  MMKVLoader,
-  useMMKVStorage,
-} from 'react-native-mmkv-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React from 'react';
 
-const MMKV: MMKVInstance = new MMKVLoader().initialize();
-type LiteralUnion<T extends U, U = string> = T | (U & {});
+function useStorage(key: string, defaultValue?: any) {
+  const [storageValue, updateStorageValue] = React.useState(defaultValue);
 
-function useStorage(
-  key: LiteralUnion<'user' | 'password'>,
-  defaultValue?: string,
-) {
-  const [value, setValue] = useMMKVStorage(key, MMKV, defaultValue);
-  return [value, setValue];
+  React.useEffect(() => {
+    getStorageValue();
+  }, []);
+
+  async function getStorageValue() {
+    let value = defaultValue;
+    try {
+      value = (await AsyncStorage.getItem(key)) || defaultValue;
+    } catch (e) {
+      // handle here
+    } finally {
+      updateStorageValue(value);
+    }
+  }
+
+  async function updateStorage(newValue: any) {
+    try {
+      await AsyncStorage.setItem(key, newValue);
+    } catch (e) {
+      // handle here
+    } finally {
+      getStorageValue();
+    }
+  }
+
+  return [storageValue, updateStorage];
 }
 
 export default useStorage;
