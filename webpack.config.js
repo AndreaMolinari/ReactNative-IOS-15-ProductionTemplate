@@ -10,6 +10,8 @@ const compileNodeModules = [
   // Add every react-native package that needs compiling
   'react-native-gesture-handler',
   'react-native-reanimated',
+  '@react-navigation',
+  '@react-navigation/drawer',
 ].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
